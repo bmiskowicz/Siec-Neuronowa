@@ -48,5 +48,6 @@ net.divideParam.testRatio=0;    %ilość danych do testowania
 [net,tr] = train(net,Plearn,Tlearn); %uczenie sieci neuronowej
 u = net(Ptest); %zapisanie do u tablicy otrzymanych wyjść
 pk = (1-sum(abs(Ttest-u)>=0.5)/length(Ttest))*100; %obliczenie PK
+
 plot((1:length(Ttest)),Ttest,'r',(1:length(Ttest)),u,'g');
 grid;
